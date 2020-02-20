@@ -9,23 +9,23 @@
 /* Begin PBXBuildFile section */
 		01818F8B23C6E47B00E2CB1D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01818F8A23C6E47B00E2CB1D /* AppDelegate.swift */; };
 		01818F8D23C6E47B00E2CB1D /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01818F8C23C6E47B00E2CB1D /* SceneDelegate.swift */; };
-		01818F8F23C6E47B00E2CB1D /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01818F8E23C6E47B00E2CB1D /* ViewController.swift */; };
 		01818F9223C6E47B00E2CB1D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 01818F9023C6E47B00E2CB1D /* Main.storyboard */; };
 		01818F9523C6E47B00E2CB1D /* Fiber_Tracker.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 01818F9323C6E47B00E2CB1D /* Fiber_Tracker.xcdatamodeld */; };
 		01818F9723C6E47C00E2CB1D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 01818F9623C6E47C00E2CB1D /* Assets.xcassets */; };
 		01818F9A23C6E47C00E2CB1D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 01818F9823C6E47C00E2CB1D /* LaunchScreen.storyboard */; };
+		01818FA223C6E54400E2CB1D /* FiberTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01818FA123C6E54400E2CB1D /* FiberTableViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		01818F8723C6E47B00E2CB1D /* Fiber Tracker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Fiber Tracker.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		01818F8A23C6E47B00E2CB1D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		01818F8C23C6E47B00E2CB1D /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		01818F8E23C6E47B00E2CB1D /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		01818F9123C6E47B00E2CB1D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		01818F9423C6E47B00E2CB1D /* Fiber_Tracker.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Fiber_Tracker.xcdatamodel; sourceTree = "<group>"; };
 		01818F9623C6E47C00E2CB1D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		01818F9923C6E47C00E2CB1D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		01818F9B23C6E47C00E2CB1D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		01818FA123C6E54400E2CB1D /* FiberTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FiberTableViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,7 +60,7 @@
 			children = (
 				01818F8A23C6E47B00E2CB1D /* AppDelegate.swift */,
 				01818F8C23C6E47B00E2CB1D /* SceneDelegate.swift */,
-				01818F8E23C6E47B00E2CB1D /* ViewController.swift */,
+				01818FA123C6E54400E2CB1D /* FiberTableViewController.swift */,
 				01818F9023C6E47B00E2CB1D /* Main.storyboard */,
 				01818F9623C6E47C00E2CB1D /* Assets.xcassets */,
 				01818F9823C6E47C00E2CB1D /* LaunchScreen.storyboard */,
@@ -141,7 +141,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				01818F8F23C6E47B00E2CB1D /* ViewController.swift in Sources */,
+				01818FA223C6E54400E2CB1D /* FiberTableViewController.swift in Sources */,
 				01818F9523C6E47B00E2CB1D /* Fiber_Tracker.xcdatamodeld in Sources */,
 				01818F8B23C6E47B00E2CB1D /* AppDelegate.swift in Sources */,
 				01818F8D23C6E47B00E2CB1D /* SceneDelegate.swift in Sources */,
@@ -298,7 +298,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "com.davideisenbaum.Fiber-Tracker";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -316,7 +316,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "com.davideisenbaum.Fiber-Tracker";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
