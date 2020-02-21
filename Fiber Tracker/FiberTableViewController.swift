@@ -56,6 +56,11 @@ class FiberTableViewController: UITableViewController {
         }
     }
     
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        // Clickable cells to point to another screen to edit date, see total fiber intake, and edit suppplement taken
+        
+    }
+    
     @IBAction func addBarButton(_ sender: Any) {
         if let context = (UIApplication.shared.delegate as? AppDelegate)?.persistentContainer.viewContext{
             let fiber = FiberCDItem(context: context)
