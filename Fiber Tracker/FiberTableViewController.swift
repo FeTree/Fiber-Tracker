@@ -6,6 +6,7 @@
 //  Copyright © 2020 David Eisenbaum. All rights reserved.
 //
 
+//test for remoteTest branch
 import UIKit
 
 class FiberTableViewController: UITableViewController {
@@ -63,9 +64,9 @@ class FiberTableViewController: UITableViewController {
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if let fiberDetailAndEditableViewController = segue.destination as? FiberDetailsAndEditableViewController {
-            if let fiberToBeSent = sender as? FiberCDItem{
-                //
+        if let FiberDetailVC = segue.destination as? FiberDetailsAndEditableViewController {
+            if let fiberToBeSent = sender as? FiberCDItem {
+                FiberDetailVC.fiberToBeSent = fiberToBeSent
             }
         }
     }
@@ -75,7 +76,7 @@ class FiberTableViewController: UITableViewController {
             let fiber = FiberCDItem(context: context)
             let dateNow = Date()
             
-            // set date and time
+            // set date and time formatted as a string
             df.dateFormat = "MM-dd hh:mm a"
             df.amSymbol = "AM"
             df.pmSymbol = "PM"
