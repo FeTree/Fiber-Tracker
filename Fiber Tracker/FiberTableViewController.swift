@@ -6,7 +6,7 @@
 //  Copyright © 2020 David Eisenbaum. All rights reserved.
 //
 
-//test for remoteTest branch
+
 import UIKit
 
 class FiberTableViewController: UITableViewController {
@@ -15,7 +15,7 @@ class FiberTableViewController: UITableViewController {
     
     let df = DateFormatter()
     
-    //github test
+    //feb 22
     
     override func viewDidLoad() {
         super.viewDidLoad()
