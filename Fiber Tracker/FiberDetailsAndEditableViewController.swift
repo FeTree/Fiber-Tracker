@@ -11,15 +11,44 @@ import UIKit
 class FiberDetailsAndEditableViewController: UIViewController {
 
     @IBOutlet weak var testLabel: UILabel!
+    @IBOutlet weak var editDateTextField: UITextField!
     
     var fiberToBeSent : FiberCDItem?
+    
+    private var datePicker: UIDatePicker?
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+        // configure UIDatePicker
+        datePicker = UIDatePicker()
+        datePicker?.datePickerMode = .dateAndTime
+        datePicker?.addTarget(self, action: #selector(FiberDetailsAndEditableViewController.dateChanged(datePicker:)), for: .valueChanged)
         
-        testLabel.text = fiberToBeSent?.timeToString
+        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(FiberDetailsAndEditableViewController.viewTapped(gestureRecognizer:)))
+        
+        view.addGestureRecognizer(tapGesture)
+        
+        // connect text field with datepicker
+        editDateTextField.inputView = datePicker
+        
+        //let time = fiberToBeSent?.date
+        let displayTime = fiberToBeSent?.timeToString
+        //set label to current time and date
+        testLabel.text = displayTime
+    }
+    
+    @objc func dateChanged(datePicker: UIDatePicker){
+        let df = DateFormatter()
+        df.dateFormat = "MM-dd hh:mm a"
+        df.amSymbol = "AM"
+        df.pmSymbol = "PM"
+        editDateTextField.text = df.string(from: datePicker.date)
+        view.endEditing(true)
+    }
+    
+    @objc func viewTapped(gestureRecognizer: UITapGestureRecognizer) {
+        view.endEditing(true)
     }
     
 
