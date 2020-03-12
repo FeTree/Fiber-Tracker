@@ -6,7 +6,7 @@
 //  Copyright © 2020 David Eisenbaum. All rights reserved.
 //
 
-//test for another test
+
 import UIKit
 
 class FiberTableViewController: UITableViewController {
@@ -59,25 +59,38 @@ class FiberTableViewController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         // Clickable cells to point to another screen to edit date, see total fiber intake, and edit suppplement taken
-        
+        let fiberToBeSent = fiberTimesArray[indexPath.row]
+        performSegue(withIdentifier: "clickedOnCellShow", sender: fiberToBeSent)
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if let FiberDetailVC = segue.destination as? FiberDetailsAndEditableViewController {
+            if let fiberToBeSent = sender as? FiberCDItem {
+                FiberDetailVC.fiberToBeSent = fiberToBeSent
+            }
+        }
     }
     
     @IBAction func addBarButton(_ sender: Any) {
         if let context = (UIApplication.shared.delegate as? AppDelegate)?.persistentContainer.viewContext{
             let fiber = FiberCDItem(context: context)
+            let dateNow = Date()
             
-            // set date and time
+            // set date and time formatted as a string
             df.dateFormat = "MM-dd hh:mm a"
             df.amSymbol = "AM"
             df.pmSymbol = "PM"
-            let dateString = df.string(from: Date())
+            let dateString = df.string(from: dateNow)
             fiber.timeToString = dateString
             
             // set type of supplement
             fiber.typeOfSupplement = "Metamucil"
+            //set date to supplement
+            fiber.date = dateNow
             (UIApplication.shared.delegate as? AppDelegate)?.saveContext()
             loadData()
         }
     }
+    
     
 }
